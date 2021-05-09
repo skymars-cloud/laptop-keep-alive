@@ -2,7 +2,7 @@
 Keeps the laptop alive for both windows and mac
 
 
-auto start a user program in windows without admin rights
+auto start a user program in windows 10 without admin rights
 
 1. create a laptop-keep-alive.bat file and the add the following contents
 
