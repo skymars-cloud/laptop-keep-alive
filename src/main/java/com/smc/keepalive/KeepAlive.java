@@ -10,7 +10,7 @@ public class KeepAlive {
             hal.delay(1000 * 30);
             Point point = MouseInfo.getPointerInfo().getLocation();
 
-            hal.mouseMove(point.x + 1, point.y + 1);
+            hal.mouseMove(point.x + 5, point.y + 5);
             hal.mouseMove(point.x , point.y);
 
             point = MouseInfo.getPointerInfo().getLocation();
