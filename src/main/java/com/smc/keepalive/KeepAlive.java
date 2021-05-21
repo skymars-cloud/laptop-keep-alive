@@ -1,20 +1,24 @@
 package com.smc.keepalive;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.*;
 public class KeepAlive {
 
     public static void jiggle( ) throws Exception {
-        Robot hal = new Robot();
+        Robot robot = new Robot();
         Random random = new Random();
         while (true) {
-            hal.delay(1000 * 30);
+            robot.delay(1000 * 30);
             Point point = MouseInfo.getPointerInfo().getLocation();
 
-            hal.mouseMove(point.x + 5, point.y + 5);
-            hal.mouseMove(point.x , point.y);
+            robot.mouseMove(point.x + 1, point.y + 1);
+            robot.mouseMove(point.x , point.y);
 
             point = MouseInfo.getPointerInfo().getLocation();
             System.out.println(point.toString() + "x>>" + point.x + "  y>>" + point.y);
+
+            robot.keyPress(KeyEvent.VK_F15);
+            robot.keyRelease(KeyEvent.VK_F15);
         }
     }
 
