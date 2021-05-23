@@ -1,24 +1,37 @@
 package com.smc.keepalive;
 import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.util.*;
 public class KeepAlive {
 
-    public static void jiggle( ) throws Exception {
+    public static void operate(Robot robot) throws Exception {
+        System.out.println("i am moving the mouse and clicking capslock 2 times");
+        Point point = MouseInfo.getPointerInfo().getLocation();
+
+        robot.mouseMove(point.x + 1, point.y + 1);
+        robot.mouseMove(point.x , point.y);
+
+        point = MouseInfo.getPointerInfo().getLocation();
+
+//        robot.mousePress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+//        robot.mouseRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+
+        // caps lock has to be pressed 2 times to get back to the same case
+        robot.keyPress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+        robot.keyRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+
+        robot.keyPress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+        robot.keyRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
+
+        System.out.println(point.toString() + "x>>" + point.x + "  y>>" + point.y);
+    }
+
+    public static void jiggle() throws Exception {
         Robot robot = new Robot();
-        Random random = new Random();
         while (true) {
+            operate( robot);
             robot.delay(1000 * 30);
-            Point point = MouseInfo.getPointerInfo().getLocation();
-
-            robot.mouseMove(point.x + 1, point.y + 1);
-            robot.mouseMove(point.x , point.y);
-
-            point = MouseInfo.getPointerInfo().getLocation();
-            System.out.println(point.toString() + "x>>" + point.x + "  y>>" + point.y);
-
-            robot.keyPress(KeyEvent.VK_F15);
-            robot.keyRelease(KeyEvent.VK_F15);
         }
     }
 
