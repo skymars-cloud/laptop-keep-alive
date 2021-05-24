@@ -14,16 +14,6 @@ public class KeepAlive {
 
         point = MouseInfo.getPointerInfo().getLocation();
 
-//        robot.mousePress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-//        robot.mouseRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-
-        // caps lock has to be pressed 2 times to get back to the same case
-        robot.keyPress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-        robot.keyRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-
-        robot.keyPress(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-        robot.keyRelease(InputEvent.getMaskForButton(KeyEvent.VK_CAPS_LOCK));
-
         System.out.println(point.toString() + "x>>" + point.x + "  y>>" + point.y);
     }
 
