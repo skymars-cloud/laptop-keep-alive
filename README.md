@@ -1,8 +1,15 @@
 # laptop-keep-alive
 Keeps the laptop alive for both windows and mac
 
+Prerequisites:
+jdk or java runtime environment
 
-autostart a user program in Windows 10 without admin rights
+Notes:
+When windows admins rights is provided, the background app may not keep the laptop live. in that case, run the batch file run the program in foreground.
+
+Autostart a user program in Windows 10 without admin rights
+
+Steps: (to run the laptop-keep-alive in background)
 
 1. create a laptop-keep-alive.bat file and then add the following contents
 
